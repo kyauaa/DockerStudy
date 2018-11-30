@@ -11,7 +11,7 @@ services:
       WORDPRESS_DB_USER: wordpress
     restart: always
     networks:
-      - jay_bridge
+      - hkt_bridge
     depends_on:
       - mysql
 
@@ -26,8 +26,8 @@ services:
       MYSQL_ROOT_PASSWORD: MyP@sw0rd
     restart: always
     networks:
-      - jay_bridge
+      - hkt_bridge
 
 
 networks:
-  jay_bridge:
+  hkt_bridge:
