@@ -1,0 +1,40 @@
+version: '3'
+services:
+  haproxy:
+    container_name: haproxy
+    image: "haproxy:1.5.19"
+    ports:
+     - "8060:8060"
+     - "1936:1936"
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    networks:
+      - lhk_bridge
+
+
+
+  webapp1:
+    container_name: webapp1
+    image: "node:8"
+    expose:
+     - "8080"
+    volumes:
+      - ./ver1:/usr/src/app
+    command: node /usr/src/app      
+    networks:
+      - lhk_bridge
+      
+  webapp2:
+    container_name: webapp2
+    image: "node:8"
+    expose:
+     - "8080"
+    volumes:
+      - ./ver2:/usr/src/app
+    command: node /usr/src/app      
+    networks:
+      - lhk_bridge
+
+
+networks:
+  lhk_bridge:
