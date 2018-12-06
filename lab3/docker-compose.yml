@@ -4,7 +4,7 @@ services:
     container_name: wordpress
     image: "wordpress"
     ports:
-     - "8080:80"
+     - "8088:80"
     environment:
       WORDPRESS_DB_PASSWORD: MyP@sw0rd
       WORDPRESS_DB_HOST: mysql:3306
