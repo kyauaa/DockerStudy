@@ -1,1 +1,1 @@
-print("Welcome to Docker World, This is version One")
+print("Happy Friday, This is version Two")
